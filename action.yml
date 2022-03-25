@@ -1,5 +1,5 @@
 name: 'Google Chat Pipeline notifications'
-description: 'CloudIA (Empacar & Desplegar) notifications' 
+description: 'Google chat notifications'
 inputs:
   webHookURL:
     description: 'Google Chat Webhook URL'
@@ -11,7 +11,7 @@ inputs:
     description: 'Release version'
     required: true
   status:
-     description: 'Workflow status'
+    description: 'Workflow status'
     required: true
 runs:
   using: 'node16'
