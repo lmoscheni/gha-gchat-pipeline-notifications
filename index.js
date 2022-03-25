@@ -26,7 +26,7 @@ fetch(webHookURL, {
     cards: [
       {
         header: {
-          title: `Deploying ${github.event.repository.name} on ${env}`,
+          title: `Deploying ${github.repository} on ${env}`,
           subtitle: `with version ${version}`,
           imageUrl:
             "https://raw.githubusercontent.com/lmoscheni/gha-gchat-pipeline-notifications/main/assets/github.png",
