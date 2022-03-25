@@ -15503,8 +15503,8 @@ fetch(webHookURL, {
     cards: [
       {
         header: {
-          title: `Deploying ${github.repository} on ${env}`,
-          subtitle: `with version ${version}`,
+          title: `Deploying ${GITHUB_REPOSITORY} on ${env}`,
+          subtitle: version,
           imageUrl:
             "https://raw.githubusercontent.com/lmoscheni/gha-gchat-pipeline-notifications/main/assets/github.png",
         },
@@ -15525,7 +15525,7 @@ fetch(webHookURL, {
                       text: "See workflow",
                       onClick: {
                         openLink: {
-                          url: `https://github.com/despegar/arbolito-ui/runs/${github.context.runId}?check_suite_focus=true`,
+                          url: `https://github.com/despegar/arbolito-ui/actions/runs/${github.context.runId}?check_suite_focus=true`,
                         },
                       },
                     },
