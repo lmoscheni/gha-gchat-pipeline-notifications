@@ -33,7 +33,7 @@ jobs:
     steps:
       - name: Notify running pipeline
         id: running
-        uses: despegar/cha-pipeline-notifications@v1
+        uses: lmoscheni/gha-gchat-pipeline-notifications@[version]
         with:
           webHookURL: http://www.yourawesomeurl.com
           env: Beta
