@@ -1,4 +1,4 @@
-GitHub Action Pipeline Notifications
+GitHub Action Google Chat Pipeline Notifications
 ===
 # Set up
 Install npm dependencies with:
