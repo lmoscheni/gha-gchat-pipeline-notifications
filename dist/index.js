@@ -15551,17 +15551,16 @@ const status = core.getInput("status");
 
 const getStatusIcon = (status) => {
   if (status === "FAILED") {
-    return "https://e7.pngegg.com/pngimages/10/205/png-clipart-computer-icons-error-information-error-angle-triangle.png";
+    return "https://raw.githubusercontent.com/lmoscheni/gha-gchat-pipeline-notifications/main/assets/error.png";
   }
   if (status === "RUNNING") {
-    return "https://cdn-icons-png.flaticon.com/512/189/189638.png";
+    return "https://raw.githubusercontent.com/lmoscheni/gha-gchat-pipeline-notifications/main/assets/running.png";
   }
   if (status === "SUCCESS") {
-    return "https://flyclipart.com/thumb2/verify-success-success-tick-icon-with-png-and-vector-format-372259.png";
+    return "https://raw.githubusercontent.com/lmoscheni/gha-gchat-pipeline-notifications/main/assets/success.png";
   }
 };
 
-github.context.runId
 
 fetch(webHookURL, {
   method: "POST",
@@ -15572,7 +15571,7 @@ fetch(webHookURL, {
           title: `Deploying ${github.event.repository.name} on ${env}`,
           subtitle: `with version ${version}`,
           imageUrl:
-            "https://icones.pro/wp-content/uploads/2021/06/icone-github-bleu.png",
+            "https://raw.githubusercontent.com/lmoscheni/gha-gchat-pipeline-notifications/main/assets/github.png",
         },
         sections: [
           {
