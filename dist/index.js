@@ -15479,11 +15479,15 @@ function fixResponseChunkedTransferBadEnding(request, errorCallback) {
 
 
 
-const threadId = core.getInput("threadId")
-const webHookURL = `${core.getInput("webHookURL")}&threadId=${threadId}`;
+const threadId = core.getInput("threadId");
+const webHookURL = core.getInput("webHookURL");
 const env = core.getInput("env");
 const version = core.getInput("version");
 const index_status = core.getInput("status");
+
+const messageCreationURL = !!threadId
+  ? `${webHookURL}&threadId=${threadId}`
+  : webHookURL;
 
 const getStatusIcon = (status) => {
   if (status === "failure") {
@@ -15500,7 +15504,7 @@ const getStatusIcon = (status) => {
   }
 };
 
-fetch(webHookURL, {
+fetch(messageCreationURL, {
   method: "POST",
   body: JSON.stringify({
     cards: [

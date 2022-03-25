@@ -15,6 +15,7 @@ inputs:
     required: true
   threadId:
     description: 'Thread Id'
+    required: false
 runs:
   using: 'node16'
   main: 'dist/index.js'
