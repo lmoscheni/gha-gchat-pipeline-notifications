@@ -13,6 +13,8 @@ inputs:
   status:
     description: 'Workflow status'
     required: true
+  threadId:
+    description: 'Thread Id'
 runs:
   using: 'node16'
   main: 'dist/index.js'

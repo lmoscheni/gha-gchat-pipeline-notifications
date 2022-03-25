@@ -1,8 +1,9 @@
-import core from "@actions/core"
-import github from "@actions/github"
-import fetch from "node-fetch"
+import core from "@actions/core";
+import github from "@actions/github";
+import fetch from "node-fetch";
 
-const webHookURL = core.getInput("webHookURL");
+const threadId = core.getInput("threadId")
+const webHookURL = `${core.getInput("webHookURL")}&threadId=${threadId}`;
 const env = core.getInput("env");
 const version = core.getInput("version");
 const status = core.getInput("status");
@@ -71,5 +72,5 @@ fetch(webHookURL, {
     }
   })
   .catch((error) => {
-    core.setFailed(error.message)
+    core.setFailed(error.message);
   });

@@ -15479,7 +15479,8 @@ function fixResponseChunkedTransferBadEnding(request, errorCallback) {
 
 
 
-const webHookURL = core.getInput("webHookURL");
+const threadId = core.getInput("threadId")
+const webHookURL = `${core.getInput("webHookURL")}&threadId=${threadId}`;
 const env = core.getInput("env");
 const version = core.getInput("version");
 const index_status = core.getInput("status");
@@ -15548,7 +15549,7 @@ fetch(webHookURL, {
     }
   })
   .catch((error) => {
-    core.setFailed(error.message)
+    core.setFailed(error.message);
   });
 
 })();
