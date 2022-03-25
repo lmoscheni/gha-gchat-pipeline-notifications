@@ -28,7 +28,7 @@ on: [push]
 
 jobs:
   hello_world_job:
-    runs-on: [self-hosted,restricted]
+    runs-on: ubuntu
     name: A job notify a running pipeline
     steps:
       - name: Notify running pipeline
