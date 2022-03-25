@@ -68,6 +68,6 @@ fetch(webHookURL, {
       throw new Error(res.error.message);
     }
   })
-  .catch((err) => {
+  .catch((error) => {
     core.setFailed(error.message)
   });
