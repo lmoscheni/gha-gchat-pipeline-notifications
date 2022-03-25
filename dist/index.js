@@ -15485,14 +15485,17 @@ const version = core.getInput("version");
 const index_status = core.getInput("status");
 
 const getStatusIcon = (status) => {
-  if (status === "FAILED") {
+  if (status === "failure") {
     return "https://raw.githubusercontent.com/lmoscheni/gha-gchat-pipeline-notifications/main/assets/error.png";
   }
-  if (status === "RUNNING") {
+  if (status === "running") {
     return "https://raw.githubusercontent.com/lmoscheni/gha-gchat-pipeline-notifications/main/assets/running.png";
   }
-  if (status === "SUCCESS") {
+  if (status === "success") {
     return "https://raw.githubusercontent.com/lmoscheni/gha-gchat-pipeline-notifications/main/assets/success.png";
+  }
+  if (status === "cancelled") {
+    return "https://raw.githubusercontent.com/lmoscheni/gha-gchat-pipeline-notifications/main/assets/cancelled.png";
   }
 };
 
