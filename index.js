@@ -19,14 +19,13 @@ const getStatusIcon = (status) => {
   }
 };
 
-
 fetch(webHookURL, {
   method: "POST",
   body: JSON.stringify({
     cards: [
       {
         header: {
-          title: `Deploying ${GITHUB_REPOSITORY} on ${env}`,
+          title: `Deploying ${github.context.repo.repo} on ${env}`,
           subtitle: version,
           imageUrl:
             "https://raw.githubusercontent.com/lmoscheni/gha-gchat-pipeline-notifications/main/assets/github.png",
