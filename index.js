@@ -9,7 +9,7 @@ const version = core.getInput("version");
 const status = core.getInput("status");
 
 const messageCreationURL = !!threadId
-  ? `${webHookURL}&threadId=${threadId}`
+  ? `${webHookURL}&threadKey=${threadId}`
   : webHookURL;
 
 const getStatusIcon = (status) => {
@@ -26,13 +26,6 @@ const getStatusIcon = (status) => {
     return "https://raw.githubusercontent.com/lmoscheni/gha-gchat-pipeline-notifications/main/assets/cancelled.png";
   }
 };
-
-console.log("webHookURL=", webHookURL);
-console.log("threadId=", threadId);
-console.log("env=", env);
-console.log("version=", version);
-console.log("status=", status);
-console.log("messageCreationURL=", messageCreationURL);
 
 fetch(messageCreationURL, {
   method: "POST",
