@@ -15504,6 +15504,13 @@ const getStatusIcon = (status) => {
   }
 };
 
+console.log("webHookURL=", webHookURL);
+console.log("threadId=", threadId);
+console.log("env=", env);
+console.log("version=", version);
+console.log("status=", index_status);
+console.log("messageCreationURL=", messageCreationURL);
+
 fetch(messageCreationURL, {
   method: "POST",
   body: JSON.stringify({
