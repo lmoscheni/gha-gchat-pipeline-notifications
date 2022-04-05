@@ -34,7 +34,7 @@ fetch(messageCreationURL, {
       {
         header: {
           title: `Deploying ${github.context.repo.repo} on ${env}`,
-          subtitle: version,
+          subtitle: version.replace('"', ""),
           imageUrl:
             "https://raw.githubusercontent.com/lmoscheni/gha-gchat-pipeline-notifications/main/assets/github.png",
         },
@@ -55,7 +55,7 @@ fetch(messageCreationURL, {
                       text: "See workflow",
                       onClick: {
                         openLink: {
-                          url: `https://github.com/despegar/arbolito-ui/actions/runs/${github.context.runId}?check_suite_focus=true`,
+                          url: `https://github.com/despegar/${github.context.repo.repo}/actions/runs/${github.context.runId}?check_suite_focus=true`,
                         },
                       },
                     },
