@@ -34,7 +34,7 @@ fetch(messageCreationURL, {
       {
         header: {
           title: `Deploying ${github.context.repo.repo} on ${env}`,
-          subtitle: version.replace('"', ""),
+          subtitle: version.replace(/"/g, ""),
           imageUrl:
             "https://raw.githubusercontent.com/lmoscheni/gha-gchat-pipeline-notifications/main/assets/github.png",
         },
